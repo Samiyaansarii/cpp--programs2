@@ -10,14 +10,11 @@ private:
     string course;
 
 public:
-    // Constructor to initialize student details
     Student(string n, int a, string dept, string c) : name(n), age(a), department(dept), course(c) {}
 
-    // Friend function declaration
     friend void displayStudentDetails(const Student &s);
 };
 
-// Friend function definition
 void displayStudentDetails(const Student &s) {
     cout << "Student Details:" << endl;
     cout << "Name: " << s.name << endl;
@@ -27,10 +24,8 @@ void displayStudentDetails(const Student &s) {
 }
 
 int main() {
-    // Creating a Student object
     Student student("John Doe", 20, "Computer Science", "Data Structures");
 
-    // Calling the friend function to display details
     displayStudentDetails(student);
 
     return 0;
