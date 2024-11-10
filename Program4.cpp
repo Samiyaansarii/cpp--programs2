@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-class B;  // Forward declaration
-class C;  // Forward declaration
+class B;  
+class C;  
 
 class A {
 private:
@@ -14,7 +14,6 @@ protected:
 public:
     A(int pA, int prA) : privateA(pA), protectedA(prA) {}
 
-    // Declare FriendClass as a friend of A
     friend class FriendClass;
 };
 
@@ -28,7 +27,6 @@ protected:
 public:
     B(int pB, int prB) : privateB(pB), protectedB(prB) {}
 
-    // Declare FriendClass as a friend of B
     friend class FriendClass;
 };
 
@@ -42,11 +40,9 @@ protected:
 public:
     C(int pC, int prC) : privateC(pC), protectedC(prC) {}
 
-    // Declare FriendClass as a friend of C
     friend class FriendClass;
 };
 
-// Friend class that has access to all private and protected members of A, B, and C
 class FriendClass {
 public:
     void displayData(const A &a, const B &b, const C &c) {
@@ -57,15 +53,12 @@ public:
 };
 
 int main() {
-    // Creating objects of classes A, B, and C
     A objA(10, 20);
     B objB(30, 40);
     C objC(50, 60);
-
-    // Creating an object of FriendClass
+    
     FriendClass friendObj;
-
-    // Accessing and displaying data of A, B, and C using FriendClass
+    
     friendObj.displayData(objA, objB, objC);
 
     return 0;
