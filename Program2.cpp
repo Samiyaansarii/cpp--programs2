@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class PrimeChecker;  // Forward declaration of PrimeChecker
+class PrimeChecker;
 
 class Number {
 private:
@@ -10,7 +10,6 @@ private:
 public:
     Number(int val) : value(val) {}
 
-    // Declare PrimeChecker as a friend class of Number
     friend class PrimeChecker;
 };
 
