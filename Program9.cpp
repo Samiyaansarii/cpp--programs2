@@ -6,37 +6,30 @@ private:
     int value;
 
 public:
-    // Constructor to initialize 'value'
+
     Number(int val = 0) : value(val) {}
 
-    // Overload + operator as a member function to find the sum
     Number operator+(const Number &other) const {
         return Number(value + other.value);
     }
 
-    // Overload - operator as a member function to find the difference
     Number operator-(const Number &other) const {
         return Number(value - other.value);
     }
 
-    // Friend function to overload + operator
     friend Number operator+(const Number &num1, const Number &num2);
 
-    // Friend function to overload - operator
     friend Number operator-(const Number &num1, const Number &num2);
 
-    // Function to display the value
     void display() const {
         cout << "Value: " << value << endl;
     }
 };
 
-// Friend function definition for + operator
 Number operator+(const Number &num1, const Number &num2) {
     return Number(num1.value + num2.value);
 }
 
-// Friend function definition for - operator
 Number operator-(const Number &num1, const Number &num2) {
     return Number(num1.value - num2.value);
 }
@@ -44,9 +37,8 @@ Number operator-(const Number &num1, const Number &num2) {
 int main() {
     Number num1(10), num2(5);
 
-    // Using member function overloads
-    Number sumMember = num1 + num2;      // Sum using member function
-    Number diffMember = num1 - num2;     // Difference using member function
+    Number sumMember = num1 + num2;     
+    Number diffMember = num1 - num2;     
 
     cout << "Using member function overloads:" << endl;
     cout << "Sum: ";
